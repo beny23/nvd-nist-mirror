@@ -81,7 +81,7 @@ function create_gnu_index ()
 #    $1 is absolute document_root with trailing '/'
 #    $2 is subdir like '/subdir/' if thats the web root, '/' if no subdir
 #    $3 is the domain 'subdomain.domain.tld'
-create_gnu_index "target/" "/nvd-nist-mirror/" "beny23.github.io"
+create_gnu_index `pwd`/target/ "/nvd-nist-mirror/" "beny23.github.io"
 
 # takes about 1-5 seconds to complete
 exit
