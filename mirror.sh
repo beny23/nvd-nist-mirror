@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash -ex
 
 mkdir -p target/feeds/json/cve/1.1
 cd target/feeds/json/cve/1.1
