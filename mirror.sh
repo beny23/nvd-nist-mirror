@@ -12,7 +12,4 @@ mkdir -p target/feeds/json/cve/1.1
   done
 )
 
-(
-  cd target
-  find feeds -type d -exec bash list-files.sh `pwd`/{}/ /nist-nvd-mirror/{} beny23.github.io \;
-}
+find target -type d -exec bash list-files.sh {} \;
