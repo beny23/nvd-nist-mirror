@@ -69,9 +69,6 @@ function create_gnu_index ()
         # now output a list of all directories in this dir (maxdepth 1) other than '.' outputting in a sorted manner exactly like apache
         find -L . -mount -depth -maxdepth 1 -type d ! -name '.' -printf "      <a href=\"%f\">%-43f@_@%Td-%Tb-%TY %Tk:%TM  -\n"|sort -d|sed 's,\([\ ]\+\)@_@,/</a>\1,g'
 
-        # print the footer html
-        echo "</pre><address>Apache Server at ${DOMAIN}</address></body></html>";
-
     # finally save the output of the subshell to index.html
     )  > $F;
 
@@ -81,7 +78,7 @@ function create_gnu_index ()
 #    $1 is absolute document_root with trailing '/'
 #    $2 is subdir like '/subdir/' if thats the web root, '/' if no subdir
 #    $3 is the domain 'subdomain.domain.tld'
-create_gnu_index `pwd`/target/ "/nvd-nist-mirror/" "beny23.github.io"
+create_gnu_index $1 $2 $3
 
 # takes about 1-5 seconds to complete
 exit
