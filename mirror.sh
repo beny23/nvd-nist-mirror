@@ -12,4 +12,4 @@ mkdir -p target/feeds/json/cve/1.1
   done
 )
 
-find target -type d -exec bash list-files.sh {} \;
+bash list-files.sh
