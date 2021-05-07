@@ -9,3 +9,5 @@ do
 	curl https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-$year.meta -O --fail
 	curl https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-$year.json.gz -O --fail
 done
+
+find target -type d -exec bash `pwd`/list-files.sh {} \;
