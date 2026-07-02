@@ -1,14 +1,14 @@
 #!/bin/bash -x
 
-mkdir -p target/feeds/json/cve/1.1
+mkdir -p target/feeds/json/cve/2.0
 (
-  cd target/feeds/json/cve/1.1
-  curl https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-modified.meta -OR --fail
-  curl https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-modified.json.gz -OR --fail
+  cd target/feeds/json/cve/2.0
+  curl https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-modified.meta -OR --fail
+  curl https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-modified.json.gz -OR --fail
   for year in $(seq 2002 `date +%Y`)
   do
-    curl https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-$year.meta -OR --fail
-    curl https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-$year.json.gz -OR --fail
+    curl https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-$year.meta -OR --fail
+    curl https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-$year.json.gz -OR --fail
   done
 )
 
